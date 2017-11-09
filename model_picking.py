@@ -1,6 +1,5 @@
 """
-    @author: Sedeeq Al-khazraji
-    @co-author: Will Thompson & Kruthika Simha 
+    @authors: Sedeeq Al-khazraji, Will Thompson, and Kruthika Simha
 """
 
 from random import randint
