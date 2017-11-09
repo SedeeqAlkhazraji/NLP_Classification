@@ -92,23 +92,23 @@ for task in TASKS:
         if task == "SENTIMENT":
             clf.class_weight = {"NEGATIVE":1,"POSITIVE":1,"NEUTRAL":5}
         kfold = model_selection.KFold(n_splits=10, random_state=randint(1, 10))
-        if clf == 'LogisticRegression':
-            parameters = {'tol':[0.1,0.001,0.0001,0.00001], 'max_iter': [100,200,300,400,500]}
+        if name == 'LogisticRegression':
+            parameters = {'tol':[0.1,0.001,0.0001]}
             clf = GridSearchCV(clf, parameters)
-        elif clf == 'KNeighborsClassifier':
+        elif name == 'Nearest Neighbors':
             parameters = {'n_neighbors':[3,5,7,10]}
             clf = GridSearchCV(clf, parameters)
-        elif clf == 'SVC':
-            parameters = {'C':[0.001,0.1,1,10,100], 'tol':[0.1,0.001,0.0001,0.00001], 'max_iter': [100,200,300,400,500]}
+        elif name == 'Linear SVM':
+            parameters = {'C':[0.001,0.1,1,10,100], 'tol':[0.1,0.01,0.001]}
             clf = GridSearchCV(clf, parameters)
-        elif clf == 'DecisionTreeClassifier':
-            parameters = {'max_depth':[None,range(100)]}
+        elif name == 'RBF SVM':
+            parameters = {'C':[0.001,0.1,1,10,100], 'tol':[0.1,0.01,0.001]}
             clf = GridSearchCV(clf, parameters)
-        elif clf == 'RandomForestClassifier':
+        elif name == 'Random Forest':
             parameters = {'n_classifiers':[1,10,100,250]}
             clf = GridSearchCV(clf, parameters)
-        elif clf == 'MLPClassifier':
-            parameters = {'hidden_layer_sizes':range(200),'activation':('logistic','tanh','relu'), 'solvers':('lbfgs', 'sgd', 'adam'), 'learning_rate':('constant', 'invscaling','adaptive'),'learning_rate_init':[0.1,0.01,0.001,0.0001],'max_iter':[100,200,300,500]}
+        elif name == 'Neural Net':
+            parameters = {'hidden_layer_sizes':range(200),'activation':('logistic','tanh','relu'), 'solvers':('lbfgs', 'sgd', 'adam'), 'learning_rate':('constant', 'invscaling','adaptive'),'learning_rate_init':[0.1,0.01,0.001]}
             clf = GridSearchCV(clf, parameters)
         clf.fit(X_train, Y_train)
         
