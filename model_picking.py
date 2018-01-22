@@ -18,7 +18,7 @@ import pickle
 
 
 #Prepare variables
-DataSet = "PS3_training_data.txt"
+DataSet = "dataset.csv"
 DataSetHeaders = ['ID', 'TEXT', 'SENTIMENT', 'CATEGORY', 'GENRE']
 TASKS = ['GENRE', 'CATEGORY', 'SENTIMENT']
 clf_training_df = pd.DataFrame(columns=['clf', 'GENRE', 'SENTIMENT', 'CATEGORY'])
