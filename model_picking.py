@@ -7,6 +7,7 @@ import pandas as pd
 from sklearn import model_selection
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import VotingClassifier, GradientBoostingClassifier, RandomForestClassifier
+from sklearn.grid_search import GridSearchCV
 from sklearn.linear_model import SGDClassifier, RidgeClassifier, LogisticRegression, Perceptron
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
@@ -30,8 +31,11 @@ bestModel ={'GENRE':0, 'CATEGORY':0,'SENTIMENT':0}
 # Here we need to work on different options
 # Check this link for mor detiles: http://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
 
+#names = ["LogisticRegression","Nearest Neighbors", "Linear SVM", "RBF SVM", "Decision Tree", "Random Forest", "Neural Net","AdaBoost","SGDClassifier","RidgeClassifier","VotingClassifier"]
+#For some reasons "Random Forest", "Neural Net" leds sometimes to errors (Kept for future improvements)
+
 names = ["LogisticRegression","Nearest Neighbors", "Linear SVM", "RBF SVM",
-         "Decision Tree", "Random Forest", "Neural Net","AdaBoost","SGDClassifier","RidgeClassifier","VotingClassifier"]
+         "Decision Tree", "AdaBoost","SGDClassifier","RidgeClassifier","VotingClassifier"]
 
 classifierslst = [
                   ("LogisticRegression" , LogisticRegression(random_state=1)),
@@ -46,8 +50,8 @@ classifiers = [
                SVC(kernel="linear", C=0.025),
                SVC(gamma=2, C=1),
                DecisionTreeClassifier(),
-               RandomForestClassifier(n_estimators=10),
-               MLPClassifier(alpha=1),
+               #RandomForestClassifier(n_estimators=10),
+               #MLPClassifier(alpha=1),
                AdaBoostClassifier(),
                SGDClassifier(),
                RidgeClassifier(tol=0.0001),
@@ -128,7 +132,7 @@ for task in TASKS:
             best_clf_name=name
 
 
-bestModel[task] = best_clf
+    bestModel[task] = best_clf
     print ("Best classifier for task %s is %s, The accuraccy of the model is %f (Trainging accuracy is %f)" %(task,best_clf_name,bestModel_test_acc, bestModel_acc))
     # save the model to disk
     #filename = task + '_' + best_clf_name + '_finalized_model.sav'
