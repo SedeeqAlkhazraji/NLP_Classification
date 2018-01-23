@@ -38,7 +38,7 @@ o    The other is to just run test_classifiers.py - this will load the provided 
 When test_classifiers.py begins, a pop-up window will appear, where you can select the test dataset. The code then tests the provided data on the three models, and outputs the final accuracy as well as the confusion matrix for the three classifiers. A second pop-up window will prompt you to select the destination as well as provide a filename, for the storing the final predictions of the three models.
 
 ## Contributing
-* **Bushra Aloraini** {baloraini@uwaterloo.ca} and  **Meiyappan Nagappan** {mei.nagappan@uwaterloo.ca}
+* **William Thompson** {https://github.com/Outfenneced} and  **Kruthika Simha** {https://github.com/kruthikasimha}
 
 ## Authors
 
