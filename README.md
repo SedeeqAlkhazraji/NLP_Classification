@@ -1,5 +1,11 @@
 # NLP Classification
-> All classification tasks can be divided into two parts: Feature selection and extraction, and then the classification. The feature selection and extraction step include both cleaning up the data before classification, as well as picking out the best features from a pool of possible features. The classification step includes using a classifier to classify the data into a set of classes, and then fine- tuning the classification based on provided ground truth data.
+> Implemntaing the following classifiaction taks on text:
+* Task 1: Identify the source genre of a sentence.
+* Task 2: Identify the polarity label of a sentence.
+* Task 3: Identify the event type of a sentence.
+
+Our work flow:
+All classification tasks can be divided into two parts: Feature selection and extraction, and then the classification. The feature selection and extraction step include both cleaning up the data before classification, as well as picking out the best features from a pool of possible features. The classification step includes using a classifier to classify the data into a set of classes, and then fine- tuning the classification based on provided ground truth data.
 
 ## 1.   Libraries Used:
 The scikit-learn library was used to implement the feature extraction as well as the classifiers. The tf-idf features were used for classification along with the following classifiers:
@@ -41,7 +47,6 @@ When test_classifiers.py begins, a pop-up window will appear, where you can sele
 * **William Thompson** {https://github.com/Outfenneced} and  **Kruthika Simha** {https://github.com/kruthikasimha}
 
 ## Authors
-
 * **Sedeeq Al-khazraji** - *Initial work* -
 sha6709@rit.edu
 https://github.com/SedeeqAlkhazraji
